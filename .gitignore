@@ -1,7 +1,0 @@
-# Ignorar el archivo .env dentro de la carpeta de backend
-# Esta ruta asume que el .gitignore esta en Proyectos MERN/
-registro_de_viajes_App/backend/.env
-
-# También puedes agregar los módulos de Node que nunca se deben subir
-registro_de_viajes_App/backend/node_modules/
-registro_de_viajes_App/frontend/node_modules/
