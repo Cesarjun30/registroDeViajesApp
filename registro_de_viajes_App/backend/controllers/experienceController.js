@@ -6,7 +6,16 @@ const Experience = require("../models/Experience");
 
 const createExperience = async (req, res) => {
   try {
-    const newExperience = new Experience(req.body);
+
+    const {title,location, description, photos,date } = req.body;
+    const newExperience = new Experience({
+      title,
+      location,
+      description,
+      photos,
+      date,
+      createdBy: req.user.id // Asegurarse de que el middleware de autenticacion este configurado para agregar el usuario al request
+    });
     await newExperience.save();
     res.status(201).json(newExperience);
   } catch (err) {

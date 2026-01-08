@@ -9,11 +9,11 @@ const {
   updateExperience,
   deleteExperience,
 } = require("../controllers/experienceController");
-
+const authMiddleware = require("../middleware/authMiddleware");
 
 // Crear experiencia
 
-router.post("/", createExperience);
+router.post("/", authMiddleware, createExperience);
 
 
 // Obtener todas las experiencias
