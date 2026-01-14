@@ -18,21 +18,21 @@ router.post("/", authMiddleware, createExperience);
 
 // Obtener todas las experiencias
 
-router.get("/", getExperiences);
+router.get("/",authMiddleware, getExperiences);
 
 
 // Obtener una experiencia por ID
 
-router.get("/:id", getExperienceById);
+router.get("/:id", authMiddleware, getExperienceById);
 
 
 // Editar experiencia
 
-router.put("/:id", updateExperience);
+router.put("/:id", authMiddleware, updateExperience);
 
 
 // Eliminar experiencia
 
-router.delete("/:id", deleteExperience);
+router.delete("/:id", authMiddleware, deleteExperience);
 
 module.exports = router
