@@ -25,7 +25,7 @@ try {
       );
 
       // SOLO guardamos el token
-      login(res.data.token);
+      login(res.data.token,res.data.user);
 
       navigate("/experiences");
     } catch (err) {
